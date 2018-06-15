@@ -2,8 +2,10 @@ import face_recognition
 from PIL import Image
 
 
-image = face_recognition.load_image_file("my_picture.jpg")
-face_locations = face_recognition.face_locations(image)
+image = face_recognition.load_image_file("../data/mote.jpeg")
+# face_locations = face_recognition.face_locations(image)
+face_locations = face_recognition.face_locations(image, number_of_times_to_upsample=0, model="cnn")
+
 
 print("I found {} face(s) in this photograph.".format(len(face_locations)))
 
